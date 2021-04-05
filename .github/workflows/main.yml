@@ -2,16 +2,36 @@ name: CI
 
 on:
   push:
+    paths:
+      - .github/workflows/main.yml
+      - _data/data.yml
     branches: [ main ]
   pull_request:
+    paths:
+      - .github/workflows/main.yml
+      - _data/data.yml
     branches: [ main ]
 jobs:
   convert_to_pdf:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Clone repository
+        uses: actions/checkout@v2
         with:
+          persist-credentials: false 
           fetch-depth: 0
-      - uses: docker://pandoc/latex:2.11.4
+      - name: Create pdf 
+        uses: docker://pandoc/latex:2.11.4
         with:
           args: " --pdf-engine=xelatex --template=_data/template.tex -o assets/cv.pdf _data/data.yml"
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/cv.pdf
+          git commit -m "Update pdf"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
