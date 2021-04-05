@@ -1,15 +1,14 @@
-name: Stavrospanakakis
-support_dark_mode: true
-star: false
+---
+details:
+  name: STAVROS PANAKAKIS
+  support_dark_mode: true
+  star: false
 
-# Sidebar
+  # Sidebar
 contact:
   email: stavrospanakakis@gmail.com
   github: Stavrospanakakis
   linkedin: stavrospanakakis
-  phone: 
-  gitlab: 
-  twitter: 
 
 languages:
   - idiom: English
@@ -43,7 +42,7 @@ skills:
     skill:
       - Git
       - Jira
-
+  
 experience:
   - role: Web Development
     time: 2020-Present
@@ -84,8 +83,7 @@ experience:
       COVID-19 with 96% accuracy. 
     technologies_used: | 
       Python, React, TypeScript, Docker, Linux, SCSS, HTML
-# Volunteering
-volunteering:
+    
 volunteering:
   - time: 2020-Present
     role: Member
@@ -101,3 +99,4 @@ volunteering:
       Developed the main functionality of an eshop for selling event tickets (200+
       sold), chose the appropriate platform for the main virtual event and worked
       with strict deadlines.
+---
