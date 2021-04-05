@@ -1,3 +1,8 @@
 _site
 .sass-cache
 .jekyll-metadata
+template.aux
+template.fdb_latexmk
+template.fls
+template.log
+template.pdf
