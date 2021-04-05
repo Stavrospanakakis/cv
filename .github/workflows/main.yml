@@ -2,21 +2,16 @@ name: CI
 
 on:
   push:
-    paths:
-      - _data/data.yml
     branches: [ main ]
   pull_request:
-    paths:
-      - _data/data.yml
     branches: [ main ]
 jobs:
   convert_to_pdf:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: docker://pandoc/latex:2.11.4
         with:
-          args: >-  # allows you to break string into multiple lines
-            --pdf-engine=xelatex
-            --template=_data/template.tex
-            -o assets/cv.pdf
-            _data/data.yml
+          args: " --pdf-engine=xelatex --template=_data/template.tex -o assets/cv.pdf _data/data.yml"
