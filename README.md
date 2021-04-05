@@ -17,8 +17,5 @@ Go to https://username.github.io/jekyll-cv/
 ## Contributing 
 - Feel free to open issues and create pull requests for new features or skins
 
-## Credits
-Latex icons were taken from [there](https://github.com/plorcupine/latex-fontawesome).
-
 ## License
 - [MIT](./LICENSE)

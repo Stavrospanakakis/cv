@@ -6,3 +6,5 @@ template.fdb_latexmk
 template.fls
 template.log
 template.pdf
+template.out
+template.synctex.gz
